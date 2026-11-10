@@ -8,7 +8,8 @@ body:
       value: |
         Thank you for reporting this. The fastest route to a fix is the smallest program that shows the problem.
         **Remove anything private before you paste it** (paths, names, keys, company code) - it is published here for
-        anyone to see. A later EK9 release adds `ek9 -reportbug`, which writes this report for you.
+        anyone to see. After an internal compiler error, `ek9 -reportbug` writes this report for you, with your
+        paths and names removed: paste the file it names.
 
         A security problem? Do not file it here - use "Report a vulnerability" on the Security tab.
   - type: input
@@ -36,7 +37,7 @@ body:
     id: report
     attributes:
       label: The smallest program that shows the problem
-      description: The EK9 source, cut down as far as it still shows the problem. (When your EK9 has `ek9 -reportbug`, paste its report file instead.)
+      description: The EK9 source, cut down as far as it still shows the problem - or, after an internal compiler error, the whole ek9-bug-report-<id>.ek9 file `ek9 -reportbug` wrote (paste it as is; it is already redacted).
       render: text
     validations:
       required: true

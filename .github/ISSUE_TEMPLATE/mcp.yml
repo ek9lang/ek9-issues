@@ -6,7 +6,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please give the tool's name and the exact arguments: most tool problems reproduce from those alone.
+        Please give the tool's name and the exact arguments: most tool problems reproduce from those alone. If the
+        answer says a tool "failed" with an internal error, run `ek9 -reportbug` at a terminal and paste the
+        redacted report file it names instead of retyping the stack trace.
         A security problem (for example a tool reaching outside its workspace)? Use "Report a vulnerability" on the
         Security tab, not an issue.
   - type: input

@@ -7,6 +7,8 @@ body:
     attributes:
       value: |
         If the IDE showed a compiler error you think is wrong, the "Language / compiler" form is the better place.
+        If the IDE crashed, Help > Report a Bug... writes a redacted report file into your project and opens this
+        form - paste that file below rather than retyping the error.
         A security problem? Use "Report a vulnerability" on the Security tab, not an issue.
   - type: input
     id: version
