@@ -50,7 +50,7 @@ body:
     id: actual
     attributes:
       label: What happened
-      description: A screenshot helps. If the IDE crashed, paste the report from `ek9 -reportbug`.
+      description: A screenshot helps. If the IDE crashed, paste the error text it showed.
     validations:
       required: true
   - type: checkboxes

@@ -6,9 +6,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for reporting this. The fastest route to a fix is the report file `ek9 -reportbug` writes: it holds the
-        crash fingerprint, the environment and a minimal program, with your home path, user name and host name removed.
-        **Read it before you paste it** - it is published here for anyone to see.
+        Thank you for reporting this. The fastest route to a fix is the smallest program that shows the problem.
+        **Remove anything private before you paste it** (paths, names, keys, company code) - it is published here for
+        anyone to see. A later EK9 release adds `ek9 -reportbug`, which writes this report for you.
 
         A security problem? Do not file it here - use "Report a vulnerability" on the Security tab.
   - type: input
@@ -35,8 +35,8 @@ body:
   - type: textarea
     id: report
     attributes:
-      label: The report file from `ek9 -reportbug`
-      description: Paste the whole file. If you cannot run it, paste the smallest program that shows the problem.
+      label: The smallest program that shows the problem
+      description: The EK9 source, cut down as far as it still shows the problem. (When your EK9 has `ek9 -reportbug`, paste its report file instead.)
       render: text
     validations:
       required: true

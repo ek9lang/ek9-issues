@@ -4,9 +4,9 @@ This is where to report a problem with EK9: the language and compiler, the IDE, 
 installing it. Choose **New issue** and pick the form that fits; each form asks only for what is needed to reproduce
 the problem.
 
-- **The fastest route to a fix:** run `ek9 -reportbug` after a crash. It writes a report file with the crash
-  fingerprint, your environment and the smallest program that shows the problem. It removes your home path, user
-  name and host name, and it prints the form to use. Read the file before you paste it - issues here are public.
+- **The fastest route to a fix:** the smallest program that shows the problem, the exact message or output, and
+  `ek9 -V`. Remove anything private first (paths, names, keys, company code) - issues here are public. A later EK9
+  release adds `ek9 -reportbug`, which will write this report for you with your paths and names already removed.
 - **A security problem?** Do not open an issue. See [SECURITY.md](SECURITY.md) and use **Report a vulnerability** on
   the Security tab.
 - **A question rather than a problem?** Search the Q&A at https://ek9.io/qa/ or with `ek9 -q <words>`.
