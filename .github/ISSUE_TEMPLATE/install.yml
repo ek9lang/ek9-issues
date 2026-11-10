@@ -1,0 +1,50 @@
+name: Install and packaging
+description: Downloading, installing or starting EK9 failed - the macOS app, a Linux or Windows kit, the Docker image, 'Install ek9 Command', or ek9.env.
+title: "[install] "
+labels: ["area: install", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A download whose checksum does not match, or a kit that looks tampered with? Do not file it here - use
+        "Report a vulnerability" on the Security tab.
+  - type: dropdown
+    id: kit
+    attributes:
+      label: Which kit
+      options:
+        - macOS app (.dmg)
+        - Linux desktop tarball
+        - Linux CLI / server tarball
+        - Windows kit
+        - Docker image (ek9:slim)
+        - Built from source
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: EK9 version
+      description: From the download name, or `ek9 -V` if it starts.
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Operating system, version and architecture
+      placeholder: "macOS 15.2 arm64; Debian 13 x86_64; Windows 11 23H2 x86_64"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: What you did
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: What happened (the exact message)
+      render: text
+    validations:
+      required: true

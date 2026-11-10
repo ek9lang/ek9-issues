@@ -1,0 +1,65 @@
+name: MCP / AI tools
+description: An EK9 MCP tool (ek9 -mcp) gave a wrong answer, refused a valid request, changed code it should not have, or its description misled an AI.
+title: "[mcp] "
+labels: ["area: mcp", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please give the tool's name and the exact arguments: most tool problems reproduce from those alone.
+        A security problem (for example a tool reaching outside its workspace)? Use "Report a vulnerability" on the
+        Security tab, not an issue.
+  - type: input
+    id: version
+    attributes:
+      label: EK9 version
+      description: The output of `ek9 -V`.
+    validations:
+      required: true
+  - type: input
+    id: tool
+    attributes:
+      label: Tool name
+      placeholder: "ek9_extract_method"
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: MCP client
+      placeholder: "Claude Code, the EK9 IDE, another client"
+  - type: textarea
+    id: arguments
+    attributes:
+      label: The arguments sent
+      description: The JSON the client sent to the tool.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: answer
+    attributes:
+      label: The answer received
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: The EK9 source involved (smallest that shows it)
+      render: text
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you file
+      options:
+        - label: I searched the existing issues for this problem.
+          required: true
+        - label: The pasted content holds nothing private (paths, names, keys, company code).
+          required: true

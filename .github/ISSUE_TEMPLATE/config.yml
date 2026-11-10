@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability - report it privately, not as an issue
+    url: https://github.com/ek9lang/ek9-issues/security/advisories/new
+    about: A flaw in the compiler, the runtime, sanitisation or the tools that could be abused. Only the maintainers see it.
+  - name: EK9 documentation
+    url: https://ek9.io
+    about: The language reference, the error catalogue (https://ek9.io/errors.html) and the Q&A.
+  - name: A question about how to write something in EK9
+    url: https://ek9.io/qa/
+    about: Search the Q&A first - 'ek9 -q <words>' on the command line does the same search offline.

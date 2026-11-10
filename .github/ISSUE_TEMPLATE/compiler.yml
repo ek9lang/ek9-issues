@@ -1,0 +1,70 @@
+name: Language / compiler
+description: The compiler crashed, accepted something it should refuse, refused something valid, or the program does the wrong thing.
+title: "[compiler] "
+labels: ["area: compiler", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting this. The fastest route to a fix is the report file `ek9 -reportbug` writes: it holds the
+        crash fingerprint, the environment and a minimal program, with your home path, user name and host name removed.
+        **Read it before you paste it** - it is published here for anyone to see.
+
+        A security problem? Do not file it here - use "Report a vulnerability" on the Security tab.
+  - type: input
+    id: version
+    attributes:
+      label: EK9 version
+      description: The output of `ek9 -V`.
+      placeholder: "0.0.1-0"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem?
+      options:
+        - The compiler crashed (an exception or stack trace)
+        - It refused valid code (a wrong error)
+        - It accepted code it should refuse (a missing error)
+        - The program compiled but does the wrong thing at run time
+        - An error message is confusing or wrong
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: The report file from `ek9 -reportbug`
+      description: Paste the whole file. If you cannot run it, paste the smallest program that shows the problem.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+      description: The error text, the wrong output, or the first lines of the stack trace.
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Operating system and architecture
+      placeholder: "macOS 15 arm64, Ubuntu 24.04 x86_64, Windows 11 x86_64"
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you file
+      options:
+        - label: I searched the existing issues for this problem.
+          required: true
+        - label: The pasted content holds nothing private (paths, names, keys, company code).
+          required: true

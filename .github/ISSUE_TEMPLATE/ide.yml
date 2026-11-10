@@ -1,0 +1,64 @@
+name: IDE
+description: Something in the EK9 IDE (ek9 -ide) is broken, wrong or confusing - an editor, a pane, a lesson, a refactoring, the debugger.
+title: "[ide] "
+labels: ["area: ide", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If the IDE showed a compiler error you think is wrong, the "Language / compiler" form is the better place.
+        A security problem? Use "Report a vulnerability" on the Security tab, not an issue.
+  - type: input
+    id: version
+    attributes:
+      label: EK9 version
+      description: Help > About, or `ek9 -V`.
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Operating system and architecture
+      placeholder: "macOS 15 arm64, Ubuntu 24.04 x86_64, Windows 11 x86_64"
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where in the IDE
+      description: The menu item, pane, dialog or lesson.
+      placeholder: "Refactor > Extract Method; the Debug window; the 'book-classes' lesson"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Choose ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+      description: A screenshot helps. If the IDE crashed, paste the report from `ek9 -reportbug`.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you file
+      options:
+        - label: I searched the existing issues for this problem.
+          required: true
+        - label: Screenshots and pasted text hold nothing private.
+          required: true

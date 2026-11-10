@@ -1,0 +1,35 @@
+name: Docs and site
+description: A page on ek9.io (or the offline docs from `ek9 -docs`), a book chapter, a Q&A answer or an `ek9 -h` text is wrong, unclear or broken.
+title: "[docs] "
+labels: ["area: docs", "needs triage"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page or command
+      description: The URL, the book chapter, the Q&A number (`ek9 -q 252`), or the help command (`ek9 -h E08097`).
+      placeholder: "https://ek9.io/errors/E08097.html"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is wrong?
+      options:
+        - The text is wrong (it says something EK9 does not do)
+        - An example does not compile or gives different output
+        - It is unclear or hard to follow
+        - A broken link or missing page
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: What is wrong, and what it should say
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: EK9 version (for offline docs or `ek9 -h`)
